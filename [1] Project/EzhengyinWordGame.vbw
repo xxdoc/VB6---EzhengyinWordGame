@@ -1,0 +1,4 @@
+FormMainWindow = -254, 243, 510, 720, C, 0, 0, 764, 955, C
+FormSettings = 764, 0, 1528, 955, C, 0, 0, 466, 955, C
+FormDifficultyIndexHelp = 240, 168, 1328, 815, C, 0, 0, 764, 955, C
+FormGameReport = 0, 0, 764, 955, C, 294, 194, 1058, 672, C
