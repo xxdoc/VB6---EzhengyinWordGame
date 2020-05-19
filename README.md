@@ -1,8 +1,8 @@
-# [VB6] EzhengyinWordGame
+# [VB6] EzhengyinWordGame / 恶政隐文字游戏
 
 ## Downloads / 下载 / ダウンロード / 다운로드
 
-[EzhengyinWordGame.exe](https://raw.githubusercontent.com/SamToki/VB6---EzhengyinWordGame/master/%5B2%5D%20EXE/EzhengyinWordGame.exe)
+[恶政隐文字游戏.exe](https://raw.githubusercontent.com/SamToki/VB6---EzhengyinWordGame/master/%5B2%5D%20EXE/恶政隐文字游戏.exe)
 
 ## Screenshots / 屏幕截图 / スクリーンショット / 스크린샷
 
