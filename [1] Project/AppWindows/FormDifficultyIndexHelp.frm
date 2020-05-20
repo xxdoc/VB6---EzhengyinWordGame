@@ -5,10 +5,10 @@ Begin VB.Form FormDifficultyIndexHelp
    BackColor       =   &H00D0D0D0&
    BorderStyle     =   0  'None
    Caption         =   "EzhengyinWordGame"
-   ClientHeight    =   10725
+   ClientHeight    =   9465
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   17970
+   ClientWidth     =   13560
    FillColor       =   &H000000FF&
    BeginProperty Font 
       Name            =   "MS Sans Serif"
@@ -26,15 +26,15 @@ Begin VB.Form FormDifficultyIndexHelp
    MinButton       =   0   'False
    MouseIcon       =   "FormDifficultyIndexHelp.frx":000C
    MousePointer    =   99  'Custom
-   ScaleHeight     =   10725
-   ScaleWidth      =   17970
+   ScaleHeight     =   9465
+   ScaleWidth      =   13560
    ShowInTaskbar   =   0   'False
    Begin VB.TextBox TextboxWelcome 
       Appearance      =   0  'Flat
       BackColor       =   &H00D0D0D0&
       BeginProperty Font 
          Name            =   "Microsoft Sans Serif"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -42,16 +42,15 @@ Begin VB.Form FormDifficultyIndexHelp
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00000000&
-      Height          =   9180
+      Height          =   7950
       Left            =   315
       Locked          =   -1  'True
       MousePointer    =   3  'I-Beam
       MultiLine       =   -1  'True
-      ScrollBars      =   2  'Vertical
       TabIndex        =   2
       Text            =   "FormDifficultyIndexHelp.frx":015E
       Top             =   1155
-      Width           =   17340
+      Width           =   12930
    End
    Begin VB.CommandButton CmdClose 
       Cancel          =   -1  'True
@@ -67,7 +66,7 @@ Begin VB.Form FormDifficultyIndexHelp
          Strikethrough   =   0   'False
       EndProperty
       Height          =   645
-      Left            =   16275
+      Left            =   11865
       MouseIcon       =   "FormDifficultyIndexHelp.frx":0617
       MousePointer    =   99  'Custom
       TabIndex        =   1
@@ -76,8 +75,8 @@ Begin VB.Form FormDifficultyIndexHelp
    End
    Begin VB.Timer TimerWindowAnimation 
       Interval        =   1
-      Left            =   17640
-      Top             =   10395
+      Left            =   13230
+      Top             =   9135
    End
    Begin VB.Label LabelDifficultyIndexTitle 
       Appearance      =   0  'Flat
@@ -98,17 +97,17 @@ Begin VB.Form FormDifficultyIndexHelp
       Left            =   315
       TabIndex        =   0
       Top             =   210
-      Width           =   15555
+      Width           =   12825
    End
    Begin VB.Shape ShapeEdge 
       BackColor       =   &H000000FF&
       BorderColor     =   &H00808080&
       BorderWidth     =   3
       FillColor       =   &H000000FF&
-      Height          =   10725
+      Height          =   9465
       Left            =   0
       Top             =   0
-      Width           =   17970
+      Width           =   13560
    End
 End
 Attribute VB_Name = "FormDifficultyIndexHelp"
