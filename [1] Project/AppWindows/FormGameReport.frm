@@ -31,7 +31,7 @@ Begin VB.Form FormGameReport
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton CmdOK 
       Cancel          =   -1  'True
-      Caption         =   "OK"
+      Caption         =   "吼啊"
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
@@ -115,9 +115,9 @@ Begin VB.Form FormGameReport
       EndProperty
       ForeColor       =   &H000060F0&
       Height          =   645
-      Left            =   11130
+      Left            =   11025
       TabIndex        =   20
-      Top             =   8295
+      Top             =   8190
       Width           =   1905
    End
    Begin VB.Label LabelGameComboBestIndicator 
@@ -232,7 +232,7 @@ Begin VB.Form FormGameReport
       Appearance      =   0  'Flat
       BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
-      Caption         =   "本局耗时"
+      Caption         =   "本局续命"
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
          Size            =   24
@@ -490,7 +490,7 @@ Begin VB.Form FormGameReport
       Appearance      =   0  'Flat
       BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
-      Caption         =   "游戏结束"
+      Caption         =   "游戏结束了！"
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
          Size            =   24

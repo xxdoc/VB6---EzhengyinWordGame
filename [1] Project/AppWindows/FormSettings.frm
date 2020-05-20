@@ -49,7 +49,7 @@ Begin VB.Form FormSettings
       Top             =   6720
       Width           =   6840
       Begin VB.CommandButton CmdFontsApply 
-         Caption         =   "应用"
+         Caption         =   "Apply"
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Microsoft YaHei UI"
@@ -636,7 +636,7 @@ Begin VB.Form FormSettings
       Begin VB.CheckBox CheckboxDisplaySpinningSakura 
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
-         Caption         =   "旋转的维尼"
+         Caption         =   "旋转的维尼遨游星瀚"
          BeginProperty Font 
             Name            =   "宋体"
             Size            =   9.75
@@ -654,7 +654,7 @@ Begin VB.Form FormSettings
          TabIndex        =   53
          Top             =   1260
          Value           =   1  'Checked
-         Width           =   1800
+         Width           =   2220
       End
       Begin VB.CheckBox CheckboxDisplaySmoothAnimations 
          Appearance      =   0  'Flat
@@ -1135,7 +1135,7 @@ Begin VB.Form FormSettings
    End
    Begin VB.CommandButton CmdClose 
       Cancel          =   -1  'True
-      Caption         =   "完成"
+      Caption         =   "吼了"
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"

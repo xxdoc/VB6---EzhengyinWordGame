@@ -77,7 +77,7 @@ Begin VB.Form FormMainWindow
       Width           =   435
    End
    Begin VB.CommandButton CmdStop 
-      Caption         =   "停止"
+      Caption         =   "不做了"
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
@@ -158,7 +158,7 @@ Begin VB.Form FormMainWindow
    End
    Begin VB.CommandButton CmdEXIT 
       Cancel          =   -1  'True
-      Caption         =   "退出"
+      Caption         =   "脱支!!"
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
          Size            =   12
@@ -177,7 +177,7 @@ Begin VB.Form FormMainWindow
       Width           =   1590
    End
    Begin VB.CommandButton CmdStartPauseResume 
-      Caption         =   "开始"
+      Caption         =   "突开"
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
@@ -357,7 +357,7 @@ Begin VB.Form FormMainWindow
       Appearance      =   0  'Flat
       BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
-      Caption         =   "本局耗时"
+      Caption         =   "本局续命"
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
          Size            =   18
@@ -654,7 +654,7 @@ Begin VB.Form FormMainWindow
       Alignment       =   2  'Center
       Appearance      =   0  'Flat
       BackColor       =   &H00C0C0C0&
-      Caption         =   "载入中..."
+      Caption         =   "倒车中..."
       BeginProperty Font 
          Name            =   "Microsoft YaHei UI"
          Size            =   12
@@ -803,11 +803,11 @@ Begin VB.Form FormMainWindow
    Begin VB.Menu MenuGame 
       Caption         =   "游戏 (&G)"
       Begin VB.Menu MenuGameStartPauseResume 
-         Caption         =   "开始"
+         Caption         =   "突开"
          Shortcut        =   {F5}
       End
       Begin VB.Menu MenuGameStop 
-         Caption         =   "停止"
+         Caption         =   "不做了"
          Enabled         =   0   'False
          Shortcut        =   {DEL}
       End
@@ -890,7 +890,7 @@ Begin VB.Form FormMainWindow
       Enabled         =   0   'False
    End
    Begin VB.Menu MenuEXIT 
-      Caption         =   "退出 (&X)"
+      Caption         =   "脱支!! (&X)"
    End
 End
 Attribute VB_Name = "FormMainWindow"
@@ -930,13 +930,13 @@ Public lotterynumber As Integer
 Public lotterykana As String
 Public lotterykanalocationX As Integer
 Public lotterykanalocationY As Integer
-Public kanadata As Variant  '(1 To 3, 1 To 74)
-Public kanarepeatedtimesdata As Variant  '(1 To 3, 1 To 74)
+Public kanadata As Variant  '(1 To 3, 1 To 72)
+Public kanarepeatedtimesdata As Variant  '(1 To 3, 1 To 72)
 
 Public correspondingromaji As String
 Public lotteryromajilocationX As Integer
 Public lotteryromajilocationY As Integer
-Public romajidata As Variant  '(1 To 3, 1 To 74)
+Public romajidata As Variant  '(1 To 3, 1 To 72)
 
 Public correctanswer As Integer
 Public chosenanswer As Integer
@@ -1020,25 +1020,25 @@ Public answer
         lotterytotal = 0
         lotterynumber = 0
         lotterykana = "??"
-        kanadata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
+        kanadata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
  _
-                         Array("!!", "续", "蛤", "青", "改", "夏", "吉", "谦", "另", "高", "苟", "赛", "吼", "基", "钦", "无", "奉", "滋", "削", "图", "身", "西", "华", "谈", "风", "姿", "识", "捉", "跑", "森", "上", "拿", "抱", "长", "经", "碰", "闷", "发", "坠", "负", "特", "连", "要", "表", "民", "新", "批", "安", "不", "得", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--"), _
-                         Array("!!", "い", "祈", "小", "维", "猪", "庆", "包", "吸", "禁", "倒", "星", "轻", "易", "通", "宽", "金", "律", "绿", "颐", "气", "冰", "岿", "大", "掀", "池", "风", "雨", "萨", "格", "尔", "吃", "没", "麦", "十", "山", "二", "百", "换", "突", "满", "喷", "梁", "沼", "精", "细", "工", "八", "撸", "不", "自", "困", "艰", "奋", "苦", "逆", "没", "发", "时", "读", "书", "闹", "清", "应", "神", "敬", "坡", "汹", "找", "瞻", "游", "亲", "谭", "麻", "泼"), _
-                         Array("!!", "膜", "品", "赵", "共", "称", "言", "粉", "五", "网", "干", "反", "翻", "一", "胡", "法", "坏", "逼", "支", "抖", "辣", "厉", "墙", "六", "坦", "铁", "螳", "当", "腊", "耿", "战", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--") _
+                         Array("!!", "续", "蛤", "青", "改", "夏", "吉", "谦", "另", "高", "苟", "赛", "吼", "基", "钦", "无", "奉", "滋", "削", "图", "身", "西", "华", "谈", "风", "姿", "识", "捉", "跑", "森", "上", "拿", "抱", "长", "经", "碰", "闷", "发", "坠", "负", "特", "连", "要", "表", "民", "新", "批", "安", "不", "得", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--"), _
+                         Array("!!", "い", "祈", "小", "维", "猪", "庆", "包", "吸", "禁", "倒", "星", "轻", "易", "通", "宽", "金", "律", "绿", "颐", "气", "冰", "岿", "大", "掀", "池", "风", "雨", "萨", "格", "尔", "吃", "麦", "十", "山", "二", "百", "换", "突", "满", "喷", "梁", "沼", "精", "细", "工", "八", "撸", "自", "困", "艰", "奋", "苦", "逆", "没", "发", "时", "读", "书", "闹", "清", "应", "神", "敬", "坡", "汹", "找", "瞻", "游", "亲", "谭", "麻", "泼"), _
+                         Array("!!", "膜", "品", "赵", "共", "称", "言", "粉", "五", "网", "干", "反", "翻", "一", "胡", "法", "坏", "逼", "支", "抖", "辣", "厉", "墙", "六", "坦", "铁", "螳", "当", "腊", "耿", "战", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--") _
                          )
-        kanarepeatedtimesdata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
+        kanarepeatedtimesdata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
  _
-                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
-                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
-                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) _
+                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
+                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
+                                      Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) _
                                       )
 
         correspondingromaji = "??"
-        romajidata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
+        romajidata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
  _
-                           Array("!!", "命", "蟆", "蛙", "变", "威", "他", "虚", "请", "明", "利", "艇", "啊", "本", "点", "可", "告", "磁", "习", "样", "经", "方", "莱", "笑", "生", "势", "得", "急", "快", "破", "台", "衣", "歉", "者", "验", "到", "声", "财", "吼", "泽", "首", "任", "要", "态", "白", "闻", "判", "轨", "行", "罪", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--"), _
-                           Array("!!", "よ", "翠", "熊", "尼", "头", "丰", "子", "精", "评", "车", "瀚", "关", "道", "商", "衣", "科", "玉", "玉", "使", "指", "棒", "然", "海", "翻", "塘", "狂", "骤", "格", "尔", "王", "饱", "事", "子", "里", "路", "百", "斤", "肩", "开", "脸", "粪", "家", "气", "甚", "腻", "笔", "千", "袖", "强", "息", "难", "苦", "斗", "吃", "差", "有", "酵", "代", "过", "单", "欢", "单", "验", "明", "畏", "涛", "涌", "准", "养", "泳", "自", "德", "批", "鸡"), _
-                           Array("!!", "乎", "韭", "弹", "惨", "帝", "论", "蛆", "毛", "紧", "五", "贼", "车", "派", "言", "轮", "球", "站", "乎", "阴", "椒", "害", "国", "四", "克", "骑", "臂", "车", "肉", "爽", "狼", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--") _
+                           Array("!!", "命", "蟆", "蛙", "变", "威", "他", "虚", "请", "明", "利", "艇", "啊", "本", "点", "可", "告", "磁", "习", "样", "经", "方", "莱", "笑", "生", "势", "得", "急", "快", "破", "台", "衣", "歉", "者", "验", "到", "声", "财", "吼", "泽", "首", "任", "要", "态", "白", "闻", "判", "轨", "行", "罪", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--"), _
+                           Array("!!", "よ", "翠", "熊", "尼", "头", "丰", "子", "精", "评", "车", "瀚", "关", "道", "商", "衣", "科", "玉", "玉", "使", "指", "棒", "然", "海", "翻", "塘", "狂", "骤", "格", "尔", "王", "饱", "子", "里", "路", "百", "斤", "肩", "开", "脸", "粪", "家", "气", "甚", "腻", "笔", "千", "袖", "息", "难", "苦", "斗", "吃", "差", "有", "酵", "代", "过", "单", "欢", "单", "验", "明", "畏", "涛", "涌", "准", "养", "泳", "自", "德", "批", "鸡"), _
+                           Array("!!", "乎", "韭", "弹", "惨", "帝", "论", "蛆", "毛", "紧", "五", "贼", "车", "派", "言", "轮", "球", "站", "乎", "阴", "椒", "害", "国", "四", "克", "骑", "臂", "车", "肉", "爽", "狼", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--", "--") _
                            )
 
         correctanswer = 0
@@ -1226,7 +1226,7 @@ Public answer
             If gamedifficultyindex >= 700 Then gamedifficultyindexindicatordescription = "究极反贼"
 
             FormSettings.LabelGameDifficultyIndexIndicator1.Caption = gamedifficultyindex
-            FormSettings.gamedifficultyindexprogressbaranimationtarget = gamedifficultyindex / 1000 * 8000
+            FormSettings.gamedifficultyindexprogressbaranimationtarget = gamedifficultyindex / 1000 * 5370
             FormSettings.LabelGameDifficultyIndexIndicator3.Caption = gamedifficultyindexindicatordescription
 
         'Input...
@@ -1369,7 +1369,7 @@ Public answer
 
             gametotalkana = 0
             If setkanaswitch(1) = True Then gametotalkana = gametotalkana + 49
-            If setkanaswitch(2) = True Then gametotalkana = gametotalkana + 74
+            If setkanaswitch(2) = True Then gametotalkana = gametotalkana + 72
             If setkanaswitch(3) = True Then gametotalkana = gametotalkana + 30
 
             'Prevent disabling all kanaswitch...
@@ -1384,7 +1384,7 @@ Public answer
                 Case 1
                     gamekanarepeatedtimescount = 0
                     For forloop1 = 1 To 3
-                        For forloop2 = 1 To 74
+                        For forloop2 = 1 To 72
                             If kanarepeatedtimesdata(forloop1)(forloop2) >= setrepeatedtimes Then gamekanarepeatedtimescount = gamekanarepeatedtimescount + 1
                         Next
                     Next
@@ -1428,11 +1428,11 @@ Public answer
                     'New Game initialization...
                     gameresult = 0: gameprogress = 0: gamekanarepeatedtimescount = 0: gametotalcount = 0: gamecombocount = 0: gamecombobest = 0: gamemistakecount = 0: gametimeelapsed = 0: gameaveragereactiontime = 0
                     lotterytotal = 0: lotterynumber = 0: lotterykana = "??": correspondingromaji = "??": correctanswer = 0: chosenanswer = 0
-                    kanarepeatedtimesdata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
+                    kanarepeatedtimesdata = Array(Array("!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!", "!!"), _
  _
-                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
-                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
-                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) _
+                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
+                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), _
+                                                  Array("!!", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) _
                                                   )
                     gamecurrenttimeleft = gamecurrenttimeleft + 1
                     LabelStatusbar.Caption = "准备好了么！ --- " & Format(((30 - gamecurrenttimeleft) / 10), "0.0")
@@ -1599,16 +1599,16 @@ TimerProgressbarAnimation_Skip6_:
     Public Sub GameStatusRefresher()
         Select Case gamestatus
             Case 9
-                LabelStatusbar.Caption = "载入中..."
+                LabelStatusbar.Caption = "倒车中..."
             Case 0
                 'Reset the time left...
                 gamecurrenttimeleft = 0
 
-                LabelStatusbar.Caption = "点击 [开始] 来撸起袖子大干一场！"
-                MenuGameStartPauseResume.Caption = "开始": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = False
+                LabelStatusbar.Caption = "点击 [突开] 来撸起袖子大干一番！"
+                MenuGameStartPauseResume.Caption = "突开": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = False
                 MenuGameChooseOption1.Enabled = False: MenuGameChooseOption2.Enabled = False: MenuGameChooseOption3.Enabled = False
                 MenuSettings.Enabled = True: MenuAbout.Enabled = True
-                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "开始": CmdStop.Enabled = False
+                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "突开": CmdStop.Enabled = False
                 CmdOption1.Enabled = False: CmdOption2.Enabled = False: CmdOption3.Enabled = False: CmdOption1.Caption = "?": CmdOption2.Caption = "?": CmdOption3.Caption = "?": LabelKanaDashboard.Caption = "?"
             Case 3
                 LabelStatusbar.Caption = ""
@@ -1635,21 +1635,21 @@ TimerProgressbarAnimation_Skip6_:
                 'Reset the time left...
                 gamecurrenttimeleft = 0
 
-                LabelStatusbar.Caption = "游戏暂停 --- 点击 [继续] 来一起继续摇摆！"
-                MenuGameStartPauseResume.Caption = "继续": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = True
+                LabelStatusbar.Caption = "游戏暂停 --- 点击 [再续] 来一起继续冲塔！"
+                MenuGameStartPauseResume.Caption = "再续": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = True
                 MenuGameChooseOption1.Enabled = False: MenuGameChooseOption2.Enabled = False: MenuGameChooseOption3.Enabled = False
                 MenuSettings.Enabled = False: MenuAbout.Enabled = True
-                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "继续": CmdStop.Enabled = True
+                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "再续": CmdStop.Enabled = True
                 CmdOption1.Enabled = False: CmdOption2.Enabled = False: CmdOption3.Enabled = False: CmdOption1.Caption = "?": CmdOption2.Caption = "?": CmdOption3.Caption = "?": LabelKanaDashboard.Caption = "?"
             Case 4
                 'Reset the time left...
                 gamecurrenttimeleft = 0
 
-                LabelStatusbar.Caption = "游戏已停止 --- 点击 [开始] 重装上阵！"
-                MenuGameStartPauseResume.Caption = "开始": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = False
+                LabelStatusbar.Caption = "游戏已停止 --- 点击 [突开] 重装上阵！"
+                MenuGameStartPauseResume.Caption = "突开": MenuGameStartPauseResume.Enabled = True: MenuGameStop.Enabled = False
                 MenuGameChooseOption1.Enabled = False: MenuGameChooseOption2.Enabled = False: MenuGameChooseOption3.Enabled = False
                 MenuSettings.Enabled = True: MenuAbout.Enabled = True
-                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "开始": CmdStop.Enabled = False
+                CmdStartPauseResume.Enabled = True: CmdStartPauseResume.Caption = "突开": CmdStop.Enabled = False
                 CmdOption1.Enabled = False: CmdOption2.Enabled = False: CmdOption3.Enabled = False: CmdOption1.Caption = "?": CmdOption2.Caption = "?": CmdOption3.Caption = "?": LabelKanaDashboard.Caption = "?"
             Case Else
                 MsgBox "错误：Game status is out of range." & vbCrLf & "请向我们提供反馈以帮助解决问题。感谢您的支持！", vbCritical + vbOKOnly + vbDefaultButton1, "恶政隐文字游戏"
@@ -1686,7 +1686,7 @@ TimerProgressbarAnimation_Skip6_:
             Do Until Not (kanarepeatedtimesdata(lotterykanalocationX)(lotterykanalocationY) >= setrepeatedtimes Or kanadata(lotterykanalocationX)(lotterykanalocationY) = "!!" Or kanadata(lotterykanalocationX)(lotterykanalocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                 lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                 lotterykanalocationX = lotterynumber
-                lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                 lotterykanalocationY = lotterynumber
             Loop
             lotterykana = kanadata(lotterykanalocationX)(lotterykanalocationY)
@@ -1713,7 +1713,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption1.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption2.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
@@ -1722,7 +1722,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption2.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption1.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
@@ -1731,7 +1731,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption3.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption1.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
@@ -1744,7 +1744,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption1.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption2.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption3.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
@@ -1753,7 +1753,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption2.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption1.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption3.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
@@ -1762,7 +1762,7 @@ TimerProgressbarAnimation_Skip6_:
                     Do Until Not (romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption3.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = CmdOption1.Caption Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "!!" Or romajidata(lotteryromajilocationX)(lotteryromajilocationY) = "--")  'Prevent selecting a repeated block or an empty block...
                         lotterytotal = 3: lotterynumber = 0: Do Until setkanaswitch(lotterynumber) = True: Call RandomNumberGenerator: Loop  'Prevent selecting a disabled part...
                         lotteryromajilocationX = lotterynumber
-                        lotterytotal = 74: lotterynumber = 0: Call RandomNumberGenerator
+                        lotterytotal = 72: lotterynumber = 0: Call RandomNumberGenerator
                         lotteryromajilocationY = lotterynumber
                     Loop
                     CmdOption2.Caption = romajidata(lotteryromajilocationX)(lotteryromajilocationY)
